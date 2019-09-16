@@ -75,6 +75,31 @@ function daysInMonth(month, leapYear = 0) {
       }
   }
 }
-console.log(daysInMonth('june', 1))
-console.log(daysInMonth('february', 0))
-console.log(daysInMonth('february'))
+// console.log(daysInMonth('june', 1))
+// console.log(daysInMonth('february', 0))
+// console.log(daysInMonth('february'))
+
+function rps(choice) {
+  if (choice !== 1 && choice !== 2 && choice !== 3) {
+  throw new Error('Choice must be 1, 2, or 3!');
+  }
+
+  const compChoice = Math.floor(Math.random() * 3) + 1;
+  if (choice === 1) {
+    if (compChoice === 1) return 'It\'s a tie! Both chose rock.';
+    else if (compChoice === 2) return 'You lose! Paper beats rock.';
+    else return 'You win! Rock beats scissors.';
+  }
+  else if (choice === 2) {
+    if (compChoice === 1) return 'You win! Paper beats rock.';
+    else if (compChoice === 2) return 'It\'s a tie! Both chose paper.';
+    else return 'You lose! Scissors beats paper.';
+  }
+  else {
+    if (compChoice === 1) return 'You lose! Rock beats scissors.';
+    else if (compChoice === 2) return 'You win! Scissors beats paper.';
+    else return 'It\'s a tie! Both chose scissors.';
+  }
+}
+
+console.log(rps(2));
