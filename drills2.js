@@ -46,4 +46,35 @@ function decode(word) {
 }
 
 const message = decode('craft block argon meter bells brown croon droop');
-console.log(message);
+//console.log(message);
+
+
+function daysInMonth(month, leapYear = 0) {
+  switch(month){
+    case 'january':
+    case 'march':
+    case 'may':
+    case 'july':
+    case 'august':
+    case 'october':
+    case 'december':
+      return '31 days';
+      break;
+    case 'april':
+    case 'june':
+    case 'september':
+    case 'november':
+      return '30 days'
+      break;
+    case 'february':
+      if (leapYear) {
+        return '29 days';
+      }
+      else {
+        return '28 days';
+      }
+  }
+}
+console.log(daysInMonth('june', 1))
+console.log(daysInMonth('february', 0))
+console.log(daysInMonth('february'))
