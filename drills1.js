@@ -4,6 +4,10 @@ function getYearOfBirth(age) {
   if (age < 0) {
     throw new Error('Age cannot be negative');
   }
+
+  if (typeof age !== 'number') {
+    throw new Error('Age must be a number');
+  }
   return 2019 - age;
 }
 
